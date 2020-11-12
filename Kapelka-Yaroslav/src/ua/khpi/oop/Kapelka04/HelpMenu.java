@@ -15,7 +15,7 @@ public class HelpMenu
 		  
 		} 
 		static void replacement(String text)
-		{	  
+		{	
 			text += " ";    
 			for (int i = 0; i < text.length(); i++) 	    
 			{	      
@@ -33,9 +33,22 @@ public class HelpMenu
 				}
 			} 
 		}
-		static int substringCount(String s, String pattern) 
+		
+		static int substringCount(String s, String pattern,boolean debug) 
 		{        
-			int result = 0;       
+			int result = 0;
+			if(debug)
+			{
+				System.out.println("Метод substringCount()");
+				System.out.println("Значение переменной s: " + s);
+				System.out.println("Значение переменной pattern: " + pattern);
+				System.out.println("Промежуточное значение переменной result: " + result);
+				System.out.println("---------------------------------");
+			}
+			else
+			{
+				System.out.println("Нету данных про переменные.");
+			}
 			s += " ";      
 			pattern += " ";       
 			for (int i = 0; i < s.length(); i++)      
@@ -51,27 +64,46 @@ public class HelpMenu
 			}     
 			return result;  
 		}
-		public static void task() 
-		{ 	  	  
+		public static void task(boolean debug) 
+		{ 	
 			String data = getString();   
 			replacement(data); 
-			int res;  
+			int res;
+			if(debug)
+			{
+				System.out.println("Метод task()");
+				System.out.println("Значение переменной data: " + data);
+			}
+			else
+			{
+				System.out.println("Нету данных про переменные.");
+			}
 			for(String s : myHashSet) 
 			{	 
-				res = substringCount(data,s);
-				System.out.println("Слово: " + s);
-				System.out.println("Повторения: " + res); 
+				res = substringCount(data,s,true);	
+				System.out.println(" Повторения     Слово  ");
+		        System.out.println("     " + res + "           " + s + "    "); 
 			}
 		} 
-		public static void task(String data) 
-		{ 	    			
+		public static void task(String data,boolean debug) 
+		{ 	
 			replacement(data); 
-			int res;  
+			int res;
+			if(debug)
+			{
+				System.out.println("Метод task()");
+				System.out.println("Значение переменной data: " + data);
+				System.out.println("---------------------------------");
+			}
+			else
+			{
+				System.out.println("Нету данных про переменные.");
+			} 
 			for(String s : myHashSet)   
-			{	  
-				res = substringCount(data,s);  
-				System.out.println("Слово: " + s); 
-				System.out.println("Повторения: " + res); 
+			{	
+				res = substringCount(data,s,true);
+				System.out.println(" Повторения     Слово  "); 
+		        System.out.println("     " + res + "           " + s + "    ");
 			}
 		}
 	}
@@ -83,6 +115,7 @@ public class HelpMenu
        	if (debug) 
        	{
        		System.out.printf("on\n");
+       		
        	}
        	else
        	{

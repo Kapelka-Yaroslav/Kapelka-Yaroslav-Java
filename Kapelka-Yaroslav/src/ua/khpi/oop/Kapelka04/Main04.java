@@ -13,7 +13,10 @@ class Main04
 				"Параметр \"-d\" чи \"-debug\": в процесi роботи програми вiдображаються додатковi данi, що полегшують налагодження та перевiрку працездатностi програми: дiагностичнi повідомлення, промiжні значення змiнних, значення тимчасових змiнних та iн.");
 			
 		if(str.equals("-d") || str.equals("-debug"))
+		{
 			HelpMenu.debugMod(true);
+		}
+			
 	  }
 	  Menu();
   }
@@ -37,7 +40,7 @@ class Main04
 			 System.out.println(line);
 			 break;
 		 case 3:
-			 HelpMenu.util.task(line.toString());
+			 HelpMenu.util.task(line.toString(),true);
 			 break;
 		 case 4:
 			 temp = false;

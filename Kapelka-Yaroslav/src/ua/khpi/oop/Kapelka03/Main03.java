@@ -54,11 +54,11 @@ class util
       String data = getString();
       replacement(data);
       int res;
+      System.out.println(" Повторения     Слово  ");
       for(String s : myHashSet)
       {
         res = substringCount(data,s);
-        System.out.println("Слово: " + s);
-        System.out.println("Повторения: " + res);
+        System.out.println("     " + res + "           " + s + "    ");
       }
     }
   }
