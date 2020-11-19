@@ -7,6 +7,7 @@ import java.io.NotSerializableException;
 import java.util.Iterator;
 import java.util.Scanner;
 import ua.khpi.oop.bilyi03.*;
+import ua.khpi.oop.KapelkaTest.*;
 public class Main06 
 {
 	public static void main(String[] args) 
@@ -104,9 +105,14 @@ public class Main06
 					for (int i = 0; i < array.size(); i++) 
 					{
 						StringBuilder ln = new StringBuilder(array.getLine(i));
+						String ln1 = new String(array.getLine(i));
+						System.out.println("Работа метода чужого класса лаб. работы № 3" + "\n");
 						Helper.start(ln);
+						System.out.println("\n"+ "Работа метода своего класса лаб. работы № 3" + "\n");
+						util.task(ln1);
 						System.out.print("\n");
 					}
+
 				}
 				else
 				{
