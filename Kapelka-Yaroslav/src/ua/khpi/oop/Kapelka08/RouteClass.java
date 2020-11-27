@@ -2,12 +2,15 @@ package ua.khpi.oop.Kapelka08;
 import java.util.GregorianCalendar;
 
 public class RouteClass 
-{
-	private int size = 0;
+{	
+	private String name_route;
 	private int total_number_of_seats;
 	private GregorianCalendar days_of_the_week;
 	private int flight_number;
+	private int size = 0;
 	StationClass station[] = new StationClass[size];
+	RouteClass route;
+	
 	public int getSize()
 	{
 		return size;
@@ -17,7 +20,22 @@ public class RouteClass
 	{
 		this.size = size;
 	}
-	
+	public StationClass[] getStation()
+	{
+		return station;
+	}
+	public void setStation(StationClass[] station)
+	{
+		this.station = station;
+	}
+	public String getName_route()
+	{
+		return name_route;
+	}
+	public void setName_route(String name_route)
+	{
+		this.name_route = name_route;
+	}
 	public int getTotal_number_of_seats()
 	{
 		return total_number_of_seats;
@@ -45,51 +63,25 @@ public class RouteClass
 	}
 	public RouteClass() {};
 	
-	public RouteClass(int total_number,GregorianCalendar days,int flight)
+	public RouteClass(String name, StationClass[] station, int total_number,GregorianCalendar days,int flight)
 	{
+		this.name_route = name;
+		this.station = station;
 		total_number_of_seats = total_number;
 		this.days_of_the_week = days;
 		flight_number = flight;
 	}
 	public void outputData() 
 	{
+		System.out.println("Название маршрута: " + name_route);
+		System.out.println("Информация о станциях, присутствующих в даном маршруте: ");
+		for (int i = 0; i < station.length; i++) 
+		{
+			System.out.println("Информация о станции номер: " + (i + 1) + ". ");
+			station[i].outputDataStation();
+		}
 		System.out.println("Общее количество мест: " + total_number_of_seats);
-		System.out.println("День недели: " + days_of_the_week.getTime());
+		System.out.println("День недели, когда доступен маршрут: " + days_of_the_week.getTime());
 		System.out.println("Номер рейса: " + flight_number);
-	}
-	public void addElementStation(StationClass Route)
-	{
-		StationClass[] newStation = new StationClass[size + 1];
-		for (int i = 0; i < size; i++) 
-		{
-			newStation[i] = station[i];
-		}
-		
-		newStation[size] = Route;
-		size++;
-		station = newStation;
-	}
-	
-	public void deleteElementStation(int position)
-	{
-		if(size != 0)
-		{
-			StationClass[] newStation = new StationClass[size-1];
-			for (int i = 0; i < position-1; i++) 
-			{
-				newStation[i] = station[i];
-			}
-			for (int i = position-1, j = position; j < size; i++, j++) 
-			{
-				newStation[i] = station[j];
-			}
-			
-			size--;
-			station = newStation;
-		}
-		else
-		{
-			System.out.println("Массив пуст.");
-		}
 	}
 }

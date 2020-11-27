@@ -16,112 +16,61 @@ public class Main08
 	public static void main(String[] args) 
 	{
 		RouteClassList Route_list = new RouteClassList();
-		RouteClass Station_list = new RouteClass();
-		String Station_name1 = "Лозовая-Харьков";
-		String Station_name2 =  "Харьков-Гавриловка";
-		String Station_name3 = "Харьков-Изюм";
-		String Station_name4 = "Красноград-Харьков";
-		String Station_name5 = "Мерефа-Харьков";
-		String Station_name6 = "Славянск-Харьков";
+		String Name_route1 = "Лозовая-Харьков";
+		String Name_route2 = "Харьков-Изюм";
+		String Station_name1 = "Лозовая";		
+		String Station_name2 = "Панютино";
+		String Station_name3 = "Харьков";
+		String Station_name4 = "Харьков";
+		String Station_name5 = "Маяк";
+		String Station_name6 = "Изюм";
+		String arrival_time1 = "15:20";
+		String arrival_time2 = "15:35";
+		String arrival_time3 = "19:13";
+		String arrival_time4 = "11:55";
+		String arrival_time5 = "14:52";
+		String arrival_time6 = "15:41";
 		String departure_time1 = "15:24";
-		String departure_time2 = "15:59";
-		String departure_time3 = "06:40";
-		String departure_time4 = "16:44";
-		String departure_time5 = "06:58";
-		String departure_time6 = "06:27";
-		String arrival_time1 = "19:13";
-		String arrival_time2 = "20:37";
-		String arrival_time3 = "10:14";
-		String arrival_time4 = "19:34";
-		String arrival_time5 = "07:45";
-		String arrival_time6 = "10:51";
-		String starting_station1 = "Лозовая";	
-		String starting_station2 = "Харьков";
-		String starting_station3 = "Харьков";
-		String starting_station4 = "Красноград";
-		String starting_station5 = "Мерефа";
-		String starting_station6 = "Славянск";
-		String terminal_station1 = "Харьков";		
-		String terminal_station2 = "Гавриловка";
-		String terminal_station3 = "Изюм";
-		String terminal_station4 = "Харьков";
-		String terminal_station5 = "Харьков";
-		String terminal_station6 = "Харьков";
-		String intermediate_stations1 = "Панютино";
-		String intermediate_stations2 = "Мерефа";
-		String intermediate_stations3 =  "Маяк";
-		String intermediate_stations4 = "Власовка";
-		String intermediate_stations5 = "Покотиловка";
-		String intermediate_stations6 = "Гусаровка";
-		String departure_time_of_intermediate_stations1 = "15:35";
-		String departure_time_of_intermediate_stations2 = "16:43";
-		String departure_time_of_intermediate_stations3 = "09:24";
-		String departure_time_of_intermediate_stations4 = "17:37";
-		String departure_time_of_intermediate_stations5 = "07:25";
-		String departure_time_of_intermediate_stations6 = "06:56";
-		String arrival_time_of_intermediate_stations1 = "15:36";
-		String arrival_time_of_intermediate_stations2 = "16:54";
-		String arrival_time_of_intermediate_stations3 = "09:25";
-		String arrival_time_of_intermediate_stations4 = "17:38";
-		String arrival_time_of_intermediate_stations5 = "07:26";
-		String arrival_time_of_intermediate_stations6 = "06:57";
-		int number_of_free_seats1 = 35;
-		int number_of_free_seats2 = 48;
-		int number_of_free_seats3 = 72;
-		int number_of_free_seats4 = 65;
-		int number_of_free_seats5 = 37;
-		int number_of_free_seats6 = 86;
-		
-		GregorianCalendar days_of_the_week1 = new GregorianCalendar(2020, 10, 22);
-		days_of_the_week1.set(Calendar.HOUR_OF_DAY, 15);
-		days_of_the_week1.set(Calendar.MINUTE, 24);
+		String departure_time2 = "15:36";
+		String departure_time3 = "Времени отправления нету, так как это конечная станция.";
+		String departure_time4 = "12:00";
+		String departure_time5 = "14:53";		
+		String departure_time6 = "Времени отправления нету, так как это конечная станция.";
+		int number_of_free_seats1 = 55;
+		int number_of_free_seats2 = 78;
+		int number_of_free_seats3 = 63;
+		int number_of_free_seats4 = 87;
+		int number_of_free_seats5 = 61;
+		int number_of_free_seats6 = 75;
+		String Status_station1 = "Начальная";	
+		String Status_station2 = "Промежуточная";
+		String Status_station3 = "Конечная";
+		String Status_station4 = "Начальная";	
+		String Status_station5 = "Промежуточная";
+		String Status_station6 = "Конечная";
+		GregorianCalendar days_of_the_week1 = new GregorianCalendar(2020, 11, 7);
+		days_of_the_week1.set(Calendar.HOUR_OF_DAY, 00);
+		days_of_the_week1.set(Calendar.MINUTE, 00);
 		days_of_the_week1.set(Calendar.SECOND, 00);
-		GregorianCalendar days_of_the_week2 = new GregorianCalendar(2020, 10, 25);
-		days_of_the_week2.set(Calendar.HOUR_OF_DAY, 15);
-		days_of_the_week2.set(Calendar.MINUTE, 59);
+		GregorianCalendar days_of_the_week2 = new GregorianCalendar(2020, 11, 8);
+		days_of_the_week2.set(Calendar.HOUR_OF_DAY, 00);
+		days_of_the_week2.set(Calendar.MINUTE, 00);
 		days_of_the_week2.set(Calendar.SECOND, 00);
-		GregorianCalendar days_of_the_week3 = new GregorianCalendar(2020, 10, 30);
-		days_of_the_week3.set(Calendar.HOUR_OF_DAY, 6);
-		days_of_the_week3.set(Calendar.MINUTE, 40);
-		days_of_the_week3.set(Calendar.SECOND, 00);
-		GregorianCalendar days_of_the_week4 = new GregorianCalendar(2020, 10, 22);
-		days_of_the_week4.set(Calendar.HOUR_OF_DAY, 16);
-		days_of_the_week4.set(Calendar.MINUTE, 44);
-		days_of_the_week4.set(Calendar.SECOND, 00);
-		GregorianCalendar days_of_the_week5 = new GregorianCalendar(2020, 10, 25);
-		days_of_the_week5.set(Calendar.HOUR_OF_DAY, 6);
-		days_of_the_week5.set(Calendar.MINUTE, 58);
-		days_of_the_week5.set(Calendar.SECOND, 00);
-		GregorianCalendar days_of_the_week6 = new GregorianCalendar(2020, 10, 30);
-		days_of_the_week6.set(Calendar.HOUR_OF_DAY, 6);
-		days_of_the_week6.set(Calendar.MINUTE, 27);
-		days_of_the_week6.set(Calendar.SECOND, 00);
 		
-		StationClass stationclass1 = new StationClass(Station_name1, departure_time1, arrival_time1, starting_station1, terminal_station1, intermediate_stations1, departure_time_of_intermediate_stations1, arrival_time_of_intermediate_stations1, number_of_free_seats1);
-		StationClass stationclass2 = new StationClass(Station_name2, departure_time2, arrival_time2, starting_station2, terminal_station2, intermediate_stations2, departure_time_of_intermediate_stations2, arrival_time_of_intermediate_stations2, number_of_free_seats2);
-		StationClass stationclass3 = new StationClass(Station_name3, departure_time3, arrival_time3, starting_station3, terminal_station3, intermediate_stations3, departure_time_of_intermediate_stations3, arrival_time_of_intermediate_stations3, number_of_free_seats3);
-		StationClass stationclass4 = new StationClass(Station_name4, departure_time4, arrival_time4, starting_station4, terminal_station4, intermediate_stations4, departure_time_of_intermediate_stations4, arrival_time_of_intermediate_stations4, number_of_free_seats4);
-		StationClass stationclass5 = new StationClass(Station_name5, departure_time5, arrival_time5, starting_station5, terminal_station5, intermediate_stations5, departure_time_of_intermediate_stations5, arrival_time_of_intermediate_stations5, number_of_free_seats5);
-		StationClass stationclass6 = new StationClass(Station_name6, departure_time6, arrival_time6, starting_station6, terminal_station6, intermediate_stations6, departure_time_of_intermediate_stations6, arrival_time_of_intermediate_stations6, number_of_free_seats6);
+		RouteClass Station_list = new RouteClass();
+		StationClass Station_list_mas[] = new StationClass[3];
+		Station_list_mas[0] = new StationClass(Station_name1, arrival_time1, departure_time1, number_of_free_seats1, Status_station1);
+		Station_list_mas[1] = new StationClass(Station_name2, arrival_time2, departure_time2, number_of_free_seats2, Status_station2);
+		Station_list_mas[2] = new StationClass(Station_name3, arrival_time3, departure_time3, number_of_free_seats3, Status_station3);
+		StationClass Station_list1_mas[] = new StationClass[3];
+		Station_list1_mas[0] = new StationClass(Station_name4, arrival_time4, departure_time4, number_of_free_seats4, Status_station4);
+		Station_list1_mas[1] = new StationClass(Station_name5, arrival_time5, departure_time5, number_of_free_seats5, Status_station5);
+		Station_list1_mas[2] = new StationClass(Station_name6, arrival_time6, departure_time6, number_of_free_seats6, Status_station6);
 		
-		RouteClass routeclass1 = new RouteClass(150, days_of_the_week1, 1);
-		RouteClass routeclass2 = new RouteClass(200, days_of_the_week2, 2);
-		RouteClass routeclass3 = new RouteClass(250, days_of_the_week3, 3);
-		RouteClass routeclass4 = new RouteClass(300, days_of_the_week4, 4);
-		RouteClass routeclass5 = new RouteClass(270, days_of_the_week5, 5);
-		RouteClass routeclass6 = new RouteClass(120, days_of_the_week6, 6);
-		Station_list.addElementStation(stationclass1);
-		Station_list.addElementStation(stationclass2);
-		Station_list.addElementStation(stationclass3);
-		Station_list.addElementStation(stationclass4);
-		Station_list.addElementStation(stationclass5);
-		Station_list.addElementStation(stationclass6);
+		RouteClass routeclass1 = new RouteClass(Name_route1, Station_list_mas, 150, days_of_the_week1, 1);
+		RouteClass routeclass2 = new RouteClass(Name_route2, Station_list1_mas, 200, days_of_the_week2, 2);
 		Route_list.addElement(routeclass1);
 		Route_list.addElement(routeclass2);
-		Route_list.addElement(routeclass3);
-		Route_list.addElement(routeclass4);
-		Route_list.addElement(routeclass5);
-		Route_list.addElement(routeclass6);
 		
 		boolean stop = false;
 		Scanner scan = new Scanner(System.in); 
@@ -145,12 +94,10 @@ public class Main08
 			{
 			case 1:
 				System.out.println();
-				for (int i = 0; i < Route_list.getSize(); i++) 
+				for(RouteClass route : Route_list.route)
 				{
-					System.out.println(i+1 + ") ");
-					Station_list.station[i].outputDataStation();
-					Route_list.route[i].outputData();				
-					System.out.println();
+						route.outputData();		
+						System.out.println();
 				}
 				break;
 				
@@ -161,27 +108,46 @@ public class Main08
 				{
 					System.out.print("Ошибка. Неверный размер списка.");
 					break;
-				}	
+				}
 				scan.nextLine();
-				System.out.print("Введите названии станции: ");
+				System.out.print("Введите название маршрута: ");
 				String list = scan.nextLine();
-				System.out.print("Введите времени отправления: ");
+				System.out.print("Введите название станции: ");
 				String list1 = scan.nextLine();
-				System.out.print("Введите времени прибытия: ");
+				System.out.print("Введите время прибытия на станцию: ");
 				String list2 = scan.nextLine();
-				System.out.print("Введите начальную станцию: ");
+				System.out.print("Введите время отправления с станции: ");
 				String list3 = scan.nextLine();
-				System.out.print("Введите конечную станцию: ");
-				String list4 = scan.nextLine();
-				System.out.print("Введите промежуточную станцию: ");
-				String list5 = scan.nextLine();
-				System.out.print("Введите время прибытия для промежуточной станции: ");
-				String list6 = scan.nextLine();
-				System.out.print("Введите время отправления для промежуточной станции: ");
-				String list7 = scan.nextLine();
 				System.out.print("Введите количество пустых мест: ");
-				int list8 = scan.nextInt();
+				int list4 = scan.nextInt();
+				System.out.print("Введите статус станиции: ");
+				String list5 = scan.nextLine();
 				
+				scan.nextLine();
+				System.out.print("Введите название станции: ");
+				String list6 = scan.nextLine();
+				System.out.print("Введите время прибытия на станцию: ");
+				String list7 = scan.nextLine();
+				System.out.print("Введите время отправления с станции: ");
+				String list8 = scan.nextLine();
+				System.out.print("Введите количество пустых мест: ");
+				int list9 = scan.nextInt();
+				System.out.print("Введите статус станиции: ");
+				String list10 = scan.nextLine();
+				
+				scan.nextLine();
+				System.out.print("Введите название станции: ");
+				String list11 = scan.nextLine();
+				System.out.print("Введите время прибытия на станцию: ");
+				String list12 = scan.nextLine();
+				System.out.print("Введите время отправления с станции: ");
+				String list13 = scan.nextLine();
+				System.out.print("Введите количество пустых мест: ");
+				int list14 = scan.nextInt();
+				System.out.print("Введите статус станиции: ");
+				String list15 = scan.nextLine();
+				
+				scan.nextLine();
 				GregorianCalendar days_of_the_week7 = new GregorianCalendar();
 				System.out.print("Введите год: ");
 				value = scan.nextInt();
@@ -201,35 +167,35 @@ public class Main08
 				
 				System.out.print("Введите общее количество мест: ");
 				int total = scan.nextInt();
-				System.out.print("Введите номер рейса: ");;
+				System.out.print("Введите номер рейса: ");
 				value = scan.nextInt();
 				System.out.println("\nЭлемент добавлен.\n");
-				StationClass newStation = new StationClass(list,list1,list2,list3,list4,list5,list6,list7,list8);
-				Station_list.addElementStation(newStation);
-				RouteClass newRoute = new RouteClass(total,days_of_the_week7,value);
+				StationClass newStation[] = new StationClass[3];
+				newStation[0] = new StationClass(list1,list2,list3,list4,list5);
+				newStation[1] = new StationClass(list6,list7,list8,list9,list10);
+				newStation[2] = new StationClass(list11,list12,list13,list14,list15);
+				
+				RouteClass newRoute = new RouteClass(list,newStation,total,days_of_the_week7,value);
 				Route_list.addElement(newRoute);
 				
 				break;
 				
 			case 3:
 				System.out.println();
-				for (int i = 0; i < Route_list.getSize(); i++) 
+				for(RouteClass route : Route_list.route)
 				{
-					System.out.println(i+1 + ") ");
-					Station_list.station[i].outputDataStation();
-					Route_list.route[i].outputData();
-					System.out.println();
+						route.outputData();		
+						System.out.println();
 				}
 				
 				System.out.print("Введите номер элемента для удаления: ");
 				int position = scan.nextInt();
-				if(position > Route_list.getSize() || position < 1 && position > Station_list.getSize() || position < 1)
+				if(position > Route_list.getSize() || position < 1)
 				{
 					System.out.println("Ошибка.Неправильный номер.");
 					break;
 				}
 				Route_list.deleteElement(position);
-				Station_list.deleteElementStation(position);
 				System.out.println("\nЭлемент удален.\n");
 				
 				break;

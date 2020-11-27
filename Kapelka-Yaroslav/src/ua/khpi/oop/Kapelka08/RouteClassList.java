@@ -14,7 +14,6 @@ public class RouteClassList
 	{
 		this.size = size;
 	}
-	
 	public void addElement(RouteClass Route)
 	{
 		RouteClass[] newRoute = new RouteClass[size + 1];
@@ -27,7 +26,6 @@ public class RouteClassList
 		size++;
 		route = newRoute;
 	}
-	
 	public void deleteElement(int position)
 	{
 		if(size != 0)
@@ -49,5 +47,6 @@ public class RouteClassList
 		{
 			System.out.println("Массив пуст.");
 		}
+		
 	}
 }
