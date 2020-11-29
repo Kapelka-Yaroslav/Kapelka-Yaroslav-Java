@@ -57,7 +57,6 @@ public class Main08
 		days_of_the_week2.set(Calendar.MINUTE, 00);
 		days_of_the_week2.set(Calendar.SECOND, 00);
 		
-		RouteClass Station_list = new RouteClass();
 		StationClass Station_list_mas[] = new StationClass[3];
 		Station_list_mas[0] = new StationClass(Station_name1, arrival_time1, departure_time1, number_of_free_seats1, Status_station1);
 		Station_list_mas[1] = new StationClass(Station_name2, arrival_time2, departure_time2, number_of_free_seats2, Status_station2);
@@ -112,41 +111,25 @@ public class Main08
 				scan.nextLine();
 				System.out.print("¬ведите название маршрута: ");
 				String list = scan.nextLine();
-				System.out.print("¬ведите название станции: ");
-				String list1 = scan.nextLine();
-				System.out.print("¬ведите врем€ прибыти€ на станцию: ");
-				String list2 = scan.nextLine();
-				System.out.print("¬ведите врем€ отправлени€ с станции: ");
-				String list3 = scan.nextLine();
-				System.out.print("¬ведите количество пустых мест: ");
-				int list4 = scan.nextInt();
-				System.out.print("¬ведите статус станиции: ");
-				String list5 = scan.nextLine();
-				
-				scan.nextLine();
-				System.out.print("¬ведите название станции: ");
-				String list6 = scan.nextLine();
-				System.out.print("¬ведите врем€ прибыти€ на станцию: ");
-				String list7 = scan.nextLine();
-				System.out.print("¬ведите врем€ отправлени€ с станции: ");
-				String list8 = scan.nextLine();
-				System.out.print("¬ведите количество пустых мест: ");
-				int list9 = scan.nextInt();
-				System.out.print("¬ведите статус станиции: ");
-				String list10 = scan.nextLine();
-				
-				scan.nextLine();
-				System.out.print("¬ведите название станции: ");
-				String list11 = scan.nextLine();
-				System.out.print("¬ведите врем€ прибыти€ на станцию: ");
-				String list12 = scan.nextLine();
-				System.out.print("¬ведите врем€ отправлени€ с станции: ");
-				String list13 = scan.nextLine();
-				System.out.print("¬ведите количество пустых мест: ");
-				int list14 = scan.nextInt();
-				System.out.print("¬ведите статус станиции: ");
-				String list15 = scan.nextLine();
-				
+				System.out.print("¬ведите количество станций, которые будут присутствовать в маршруте: ");
+				int count_stan = scan.nextInt();
+				StationClass newStation[] = new StationClass[count_stan];
+				for(int i = 0; i < count_stan; i++)
+				{
+					scan.nextLine();
+					System.out.print("¬ведите название станции: ");
+					String list1 = scan.nextLine();
+					System.out.print("¬ведите врем€ прибыти€ на станцию: ");
+					String list2 = scan.nextLine();
+					System.out.print("¬ведите врем€ отправлени€ с станции: ");
+					String list3 = scan.nextLine();
+					System.out.print("¬ведите количество пустых мест: ");
+					int list4 = scan.nextInt();
+					scan.nextLine();
+					System.out.print("¬ведите статус станции: ");				
+					String list5 = scan.nextLine();
+					newStation[i] = new StationClass(list1,list2,list3,list4,list5);
+				}		
 				scan.nextLine();
 				GregorianCalendar days_of_the_week7 = new GregorianCalendar();
 				System.out.print("¬ведите год: ");
@@ -170,10 +153,6 @@ public class Main08
 				System.out.print("¬ведите номер рейса: ");
 				value = scan.nextInt();
 				System.out.println("\nЁлемент добавлен.\n");
-				StationClass newStation[] = new StationClass[3];
-				newStation[0] = new StationClass(list1,list2,list3,list4,list5);
-				newStation[1] = new StationClass(list6,list7,list8,list9,list10);
-				newStation[2] = new StationClass(list11,list12,list13,list14,list15);
 				
 				RouteClass newRoute = new RouteClass(list,newStation,total,days_of_the_week7,value);
 				Route_list.addElement(newRoute);
